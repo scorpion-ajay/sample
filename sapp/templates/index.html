@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<center>Hello John! Enter Your Current Contact Number.</center>
+<form method="POST" action="/home/">
+	{% csrf_token %}
+	<input type="text" name="continent" required placeholder="Continent">
+	<input type="text" name="country" required placeholder="Country">
+	<input type="tel" name="number" required placeholder="Contact with dial code">
+	<input type="submit">
+</form>
+{%if msg == 'Successful!' %}
+Your account has been created successfully! Press <a href="/cont/">Continue</a> to activate service.
+{%endif%}
+</body>
+</html>
